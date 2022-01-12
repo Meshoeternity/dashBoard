@@ -18,7 +18,7 @@ function SportEditModal(props) {
               Title
             </Form.Label>
             <Col md="8">
-              <Form.Control type="text" name="title" defaultValue={sport.title} required />
+              <Form.Control type="text" name="title" defaultValue={sport.title}  />
             </Col>
           </Form.Group>
 
@@ -27,9 +27,18 @@ function SportEditModal(props) {
               Poster
             </Form.Label>
             <Col md="8">
-              <Form.Control type="url" name="poster" defaultValue={sport.poster} required />
+              <Form.Control type="url" name="poster" defaultValue={sport.poster} />
             </Col>
           </Form.Group>
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column md="3">
+            description
+            </Form.Label>
+            <Col md="8">
+              <Form.Control type="textarea" name="description" defaultValue={sport.description}  />
+            </Col>
+          </Form.Group>
+          
           <Form.Group as={Row} className="mb-3">
             <Form.Label column md="3">
               COACH

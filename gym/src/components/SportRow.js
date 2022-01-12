@@ -15,9 +15,13 @@ function SportRow(props) {
       <td style={{ textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden" }}>{sport._id}</td>
       <td>{sport.title}</td>
      
+     
+
+
       <td>
         <img src={sport.poster} style={{ objectFit: "contain", height: "100px", width: "100%" }} />
       </td>
+      <td>{sport.description}</td>
       <td style={{ verticalAlign: "middle", tableLayout: "fixed", wordWrap: "break-word" }}>{sport.coach?.firstName} {sport.coach?.lastName}</td>
       <td>
         <Button variant="info" className="me-2" onClick={() => setViewShow(true)}>

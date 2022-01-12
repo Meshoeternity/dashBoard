@@ -19,6 +19,10 @@ function SportViewModal(props) {
             <img src={sport.poster} style={{ objectFit: "contain", height: "200px", width: "100%" }} />
           </ListGroup.Item>
           <ListGroup.Item>
+            <strong>description</strong> {sport.description}
+          </ListGroup.Item>
+
+          <ListGroup.Item>
             <strong>Classes:</strong>
             <ListGroup>
               {sport.classes.map(classs => (

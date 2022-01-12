@@ -29,6 +29,15 @@ function SportAddModal(props) {
               <Form.Control type="url" name="poster" required />
             </Col>
           </Form.Group>
+
+          <Form.Group as={Row} className="mb-3">
+            <Form.Label column md="3">
+            description
+            </Form.Label>
+            <Col md="8">
+              <Form.Control type="textarea" name="description" required />
+            </Col>
+          </Form.Group>
           <Form.Group as={Row} className="mb-3">
             <Form.Label column md="3">
              COACH

@@ -96,8 +96,9 @@ function App() {
 
       const sportBody = {
         title: form.elements.title.value,
-        coach: form.elements.coach.value,
         poster: form.elements.poster.value,
+        description:form.elements.description.value,
+        coach: form.elements.coach.value,
       }
       await axios.put(`http://localhost:5000/api/sports/${sportId}`, sportBody, {
         headers: {
@@ -120,8 +121,9 @@ function App() {
 
       const sportBody = {
         title: form.elements.title.value,
-        coach: form.elements.coach.value,
         poster: form.elements.poster.value,
+        description:form.elements.description.value,
+        coach: form.elements.coach.value,
       }
       await axios.post(`http://localhost:5000/api/sports`, sportBody, {
         headers: {
