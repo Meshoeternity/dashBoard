@@ -11,13 +11,14 @@ import Classes from "./pages/Classes"
 import SportsContext from "./utils/SportsContext"
 import Login from "./pages/Login"
 import Users from "./pages/Users"
+import PrivtClass from "./pages/PrivtClass"
 
 function App() {
   const [sports, setSports] = useState([])
   const [users, setUsers] = useState([])
   const [coachs, setCoachs] = useState([])
   const [classes, setClasses] = useState([])
-
+  const [privtclass, setPrivtClass] = useState([])
   const navigate = useNavigate()
 
   //----------------------------------------------------------------
@@ -31,6 +32,12 @@ function App() {
     const response = await axios.get("http://localhost:5000/api/classes")
     setClasses(response.data)
   }
+  //-------------------------------------------
+  const getprivtclass = async () => {
+    const response = await axios.get("http://localhost:5000/api/privtclass")
+    setPrivtClass(response.data)
+  }
+
   //-----------------------------------------------
   const getCoachs = async () => {
     const response = await axios.get("http://localhost:5000/api/coachs", {
@@ -54,6 +61,7 @@ function App() {
     getClasses()
     getUsers()
     getCoachs()
+    getprivtclass()
   }, [])
   //----------------------------------------------------------------------------------------------------
   const deleteSport = async sportId => {
@@ -97,7 +105,7 @@ function App() {
       const sportBody = {
         title: form.elements.title.value,
         poster: form.elements.poster.value,
-        description:form.elements.description.value,
+        description: form.elements.description.value,
         coach: form.elements.coach.value,
       }
       await axios.put(`http://localhost:5000/api/sports/${sportId}`, sportBody, {
@@ -122,7 +130,7 @@ function App() {
       const sportBody = {
         title: form.elements.title.value,
         poster: form.elements.poster.value,
-        description:form.elements.description.value,
+        description: form.elements.description.value,
         coach: form.elements.coach.value,
       }
       await axios.post(`http://localhost:5000/api/sports`, sportBody, {
@@ -252,7 +260,6 @@ function App() {
       const classesBody = {
         time: form.elements.time.value,
         sportId: form.elements.sportId.value,
-
       }
       await axios.post(`http://localhost:5000/api/classes`, classesBody, {
         headers: {
@@ -302,6 +309,65 @@ function App() {
       else console.log(error)
     }
   }
+  //-----------------------------------------------------------------------------
+  const addprivtclass = async (e, coachId) => {
+    e.preventDefault()
+    try {
+      const form = e.target
+
+      coachId = e.target.coachId.value
+      console.log(coachId)
+      const privtclassBody = {
+        time: form.elements.time.value,
+      }
+      await axios.post(`http://localhost:5000/api/privtclass/${coachId}`, privtclassBody, {
+        headers: {
+          Authorization: localStorage.tokenDashboardSports,
+        },
+      })
+      getprivtclass()
+      toast.success("add privtclass success")
+    } catch (error) {
+      if (error.response) toast.error(error.response.data)
+      else console.log(error)
+    }
+  }
+  //-----------------------------------------
+  const editprivtclass = async (e, privtclassId) => {
+    e.preventDefault()
+    try {
+      const form = e.target
+
+      const privtclassBody = {
+        time: form.elements.time.value,
+      }
+      await axios.put(`http://localhost:5000/api/privtclass/${privtclassId}`, privtclassBody, {
+        headers: {
+          Authorization: localStorage.tokenDashboardSports,
+        },
+      })
+      getprivtclass()
+      toast.success("edit privtclass success")
+    } catch (error) {
+      if (error.response) toast.error(error.response.data)
+      else console.log(error)
+    }
+  }
+  //------------------------------------
+  const deletePrivtClass = async privtclassId => {
+    try {
+      await axios.delete(`http://localhost:5000/api/privtclass/${privtclassId}`, {
+        headers: {
+          Authorization: localStorage.tokenDashboardSports,
+        },
+      })
+      toast.success("privtclass deleted")
+      getprivtclass()
+    } catch (error) {
+      if (error.response) toast.error(error.response.data)
+      else console.log(error)
+    }
+  }
 
   //-----------------------------------------------------------------------------
   const store = {
@@ -322,6 +388,10 @@ function App() {
     addClass,
     editClass,
     deleteClass,
+    addprivtclass,
+    privtclass,
+    editprivtclass,
+    deletePrivtClass,
   }
 
   return (
@@ -346,6 +416,11 @@ function App() {
               <Route
                 path="/classes"
                 element={localStorage.tokenDashboardSports ? <Classes /> : <Navigate to="/login" />}
+              />
+
+              <Route
+                path="/privtclass"
+                element={localStorage.tokenDashboardSports ? <PrivtClass /> : <Navigate to="/login" />}
               />
               <Route path="/login" element={<Login />} />
             </Routes>

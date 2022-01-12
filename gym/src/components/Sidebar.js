@@ -39,7 +39,9 @@ export default function PermanentDrawerLeft() {
         },
         palette: {
           mode: "dark",
+          
           primary: { main: "rgb(102, 157, 246)" },
+        
           background: { paper: "rgb(5, 30, 52)" },
         },
       })}
@@ -54,6 +56,7 @@ export default function PermanentDrawerLeft() {
           },
         }}
         variant="permanent"
+        
         anchor="left"
       >
         <List>
@@ -90,7 +93,19 @@ export default function PermanentDrawerLeft() {
             </ListItem>
           </Link>
         </List>
+      
+
+        <Link to="/privtclass">
+            <ListItem button>
+              <ListItemIcon>
+                <RecentActorsIcon />
+              </ListItemIcon>
+              <ListItemText primary="privtclass" sx={{ color: "white", textDecoration: "none" }} />
+            </ListItem>
+          </Link>
+      
         <Divider />
+
         <List>
           <Link to="/users">
             <ListItem button>
