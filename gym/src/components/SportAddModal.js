@@ -6,7 +6,7 @@ function SportAddModal(props) {
   const { show, setShow } = props
   const { classes, addSport,coachs} = useContext(SportsContext)
   return (
-    <Modal show={show} onHide={() => setShow(false)}>
+    <Modal show={show} onHide={(e) => setShow(false)}>
       <Form onSubmit={addSport}>
         <Modal.Header closeButton>
           <Modal.Title>Add Sport</Modal.Title>

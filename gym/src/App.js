@@ -114,6 +114,7 @@ function App() {
         },
       })
       getSports()
+      getCoachs()
       toast.success("edit success")
     } catch (error) {
       if (error.response) toast.error(error.response.data)
