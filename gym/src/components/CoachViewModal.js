@@ -23,7 +23,7 @@ function CoachViewModal(props) {
           <ListGroup>
        
               <ListGroup.Item>
-                <Image src={coach.sport.poster} roundedCircle height={50} width={50} style={{ objectFit: "cover" }} />
+               
                 <span style={{ marginLeft: 10 }}>{coach.sport.title}</span>
               </ListGroup.Item>
           
