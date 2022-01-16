@@ -25,6 +25,7 @@ function Coachs() {
             <th style={{ width: "9%" }}>#</th>
             <th style={{ width: "18%" }}>Full Name</th>
             <th style={{ width: "18%" }}>Photo</th>
+            <th style={{ width: "18%" }}>sports</th>
             <th style={{ width: "36%" }}>Actions</th>
           </tr>
         </thead>

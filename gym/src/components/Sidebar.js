@@ -6,8 +6,6 @@ import ListItem from "@mui/material/ListItem"
 import ListItemIcon from "@mui/material/ListItemIcon"
 import ListItemText from "@mui/material/ListItemText"
 import MovieCreationIcon from "@mui/icons-material/MovieCreation"
-import AddReactionIcon from "@mui/icons-material/AddReaction"
-import RecentActorsIcon from "@mui/icons-material/RecentActors"
 import GroupIcon from "@mui/icons-material/Group"
 import { createTheme, ThemeProvider } from "@mui/material"
 import { Link } from "react-router-dom"
@@ -15,6 +13,7 @@ import LoginIcon from "@mui/icons-material/Login"
 import { useContext } from "react"
 import SportsContext from "../utils/SportsContext"
 import { CgGym } from "react-icons/cg";
+import { MdOutlineSportsVolleyball, MdSportsHandball, MdOutlineSportsKabaddi , MdSports} from "react-icons/md";
 
 const drawerWidth = 240
 
@@ -65,7 +64,9 @@ export default function PermanentDrawerLeft() {
           <Link to="/sports">
             <ListItem button>
               <ListItemIcon>
-                <MovieCreationIcon />
+               
+               
+                <MdOutlineSportsVolleyball />
               </ListItemIcon>
               <ListItemText primary="sports" sx={{ color: "white", textDecoration: "none" }} />
             </ListItem>
@@ -73,7 +74,9 @@ export default function PermanentDrawerLeft() {
           <Link to="/coachs">
             <ListItem button>
               <ListItemIcon>
-                <AddReactionIcon />
+               
+                < MdSports />
+              
               </ListItemIcon>
               <ListItemText primary="coachs" sx={{ color: "white", textDecoration: "none" }} />
             </ListItem>
@@ -81,7 +84,10 @@ export default function PermanentDrawerLeft() {
           <Link to="/classes">
             <ListItem button>
               <ListItemIcon>
-                <RecentActorsIcon />
+                
+                < MdOutlineSportsKabaddi/>
+               
+               
               </ListItemIcon>
               <ListItemText primary="classes" sx={{ color: "white", textDecoration: "none" }} />
             </ListItem>
@@ -92,7 +98,7 @@ export default function PermanentDrawerLeft() {
         <Link to="/privtclass">
             <ListItem button>
               <ListItemIcon>
-                <RecentActorsIcon />
+                < MdSportsHandball/>
               </ListItemIcon>
               <ListItemText primary="privtclass" sx={{ color: "white", textDecoration: "none" }} />
             </ListItem>

@@ -19,7 +19,7 @@ function CoachViewModal(props) {
           </ListGroup.Item>
         </ListGroup>
         <ListGroup.Item>
-          {/* <strong>Sports:</strong>
+          <strong>Sports:</strong>
           <ListGroup>
        
               <ListGroup.Item>
@@ -27,7 +27,7 @@ function CoachViewModal(props) {
                 <span style={{ marginLeft: 10 }}>{coach.sport.title}</span>
               </ListGroup.Item>
           
-          </ListGroup> */}
+          </ListGroup>
         </ListGroup.Item>
       </Modal.Body>
       <Modal.Footer>

@@ -23,6 +23,7 @@ function Classes() {
           <tr>
             <th style={{ width: "9%" }}>#</th>
             <th style={{ width: "58%" }}>Time</th>
+            <th style={{ width: "58%" }}>sport</th>
             <th style={{ width: "36%" }}>Actions</th>
           </tr>
         </thead>

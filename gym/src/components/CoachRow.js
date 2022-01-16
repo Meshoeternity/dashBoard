@@ -21,6 +21,15 @@ function CoachRow(props) {
       <td>
         <img src={coach.photo} style={{ objectFit: "contain", height: "100px", width: "100%" }} />
       </td>
+      {coach.sport.map(sport=>
+          <td>
+            <p>{sport.title}</p>
+
+             </td>
+        )}
+    
+       
+     
     
       <td>
         <Button variant="info" className="me-2" onClick={() => setViewShow(true)}>
