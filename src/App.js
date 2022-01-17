@@ -62,7 +62,6 @@ function App() {
     getUsers()
     getCoachs()
     getprivtclass()
-  
   }, [])
   //----------------------------------------------------------------------------------------------------
   const deleteSport = async sportId => {
@@ -147,7 +146,7 @@ function App() {
       else console.log(error)
     }
   }
-  //----------------------------------------------------------------------------
+  //-----------------------------------------------------------------------------
   const logout = () => {
     localStorage.removeItem("tokenDashboardSports")
   }
