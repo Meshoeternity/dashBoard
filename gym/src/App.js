@@ -62,6 +62,7 @@ function App() {
     getUsers()
     getCoachs()
     getprivtclass()
+  
   }, [])
   //----------------------------------------------------------------------------------------------------
   const deleteSport = async sportId => {
