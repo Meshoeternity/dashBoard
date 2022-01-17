@@ -34,7 +34,7 @@ export default function PermanentDrawerLeft() {
           
           primary: { main: "rgb(102, 157, 246)" },
         
-          background: { paper: "rgb(87, 5, 48)" },
+          background: { paper: "rgb(36, 161, 156)" },
         },
       })}
     >
