@@ -23,24 +23,24 @@ function App() {
 
   //----------------------------------------------------------------
   const getSports = async () => {
-    const response = await axios.get("http://localhost:5000/api/sports")
+    const response = await axios.get("https://gym-api-1.herokuapp.com/api/sports")
     setSports(response.data)
   }
 
   //-------------------------------------------------
   const getClasses = async () => {
-    const response = await axios.get("http://localhost:5000/api/classes")
+    const response = await axios.get("https://gym-api-1.herokuapp.com/api/classes")
     setClasses(response.data)
   }
   //-------------------------------------------
   const getprivtclass = async () => {
-    const response = await axios.get("http://localhost:5000/api/privtclass")
+    const response = await axios.get("https://gym-api-1.herokuapp.com/api/privtclass")
     setPrivtClass(response.data)
   }
 
   //-----------------------------------------------
   const getCoachs = async () => {
-    const response = await axios.get("http://localhost:5000/api/coachs", {
+    const response = await axios.get("https://gym-api-1.herokuapp.com/api/coachs", {
       headers: {
         Authorization: localStorage.tokenDashboardSports,
       },
@@ -49,7 +49,7 @@ function App() {
   }
   //------------------------------------------------
   const getUsers = async () => {
-    const response = await axios.get("http://localhost:5000/api/auth/users", {
+    const response = await axios.get("https://gym-api-1.herokuapp.com/api/auth/users", {
       headers: {
         Authorization: localStorage.tokenDashboardSports,
       },
@@ -66,7 +66,7 @@ function App() {
   //----------------------------------------------------------------------------------------------------
   const deleteSport = async sportId => {
     try {
-      await axios.delete(`http://localhost:5000/api/sports/${sportId}`, {
+      await axios.delete(`https://gym-api-1.herokuapp.com/api/sports/${sportId}`, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -87,7 +87,7 @@ function App() {
         email: form.elements.email.value,
         password: form.elements.password.value,
       }
-      const response = await axios.post("http://localhost:5000/api/auth/login/admin", adminBody)
+      const response = await axios.post("https://gym-api-1.herokuapp.com/api/auth/login/admin", adminBody)
       localStorage.tokenDashboardSports = response.data
       toast.success("login success")
       navigate("/sports")
@@ -108,7 +108,7 @@ function App() {
         description: form.elements.description.value,
         coach: form.elements.coach.value,
       }
-      await axios.put(`http://localhost:5000/api/sports/${sportId}`, sportBody, {
+      await axios.put(`https://gym-api-1.herokuapp.com/api/sports/${sportId}`, sportBody, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -134,7 +134,7 @@ function App() {
         description: form.elements.description.value,
         coach: form.elements.coach.value,
       }
-      await axios.post(`http://localhost:5000/api/sports`, sportBody, {
+      await axios.post(`https://gym-api-1.herokuapp.com/api/sports`, sportBody, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -164,7 +164,7 @@ function App() {
         password: form.elements.password.value,
         avatar: form.elements.avatar.value,
       }
-      await axios.post(`http://localhost:5000/api/auth/add-admin`, adminBody, {
+      await axios.post(`https://gym-api-1.herokuapp.com/api/auth/add-admin`, adminBody, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -179,7 +179,7 @@ function App() {
   //--------------------------------------------------------------------------------------------
   const deleteUser = async userId => {
     try {
-      await axios.delete(`http://localhost:5000/api/auth/users/${userId}`, {
+      await axios.delete(`https://gym-api-1.herokuapp.com/api/auth/users/${userId}`, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -202,7 +202,7 @@ function App() {
         lastName: form.elements.lastName.value,
         photo: form.elements.photo.value,
       }
-      await axios.post(`http://localhost:5000/api/coachs`, coachBody, {
+      await axios.post(`https://gym-api-1.herokuapp.com/api/coachs`, coachBody, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -225,7 +225,7 @@ function App() {
         lastName: form.elements.lastName.value,
         photo: form.elements.photo.value,
       }
-      await axios.put(`http://localhost:5000/api/coachs/${coachId}`, coachBody, {
+      await axios.put(`https://gym-api-1.herokuapp.com/api/coachs/${coachId}`, coachBody, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -240,7 +240,7 @@ function App() {
   //------------------------------------
   const deleteCoach = async coachId => {
     try {
-      await axios.delete(`http://localhost:5000/api/coachs/${coachId}`, {
+      await axios.delete(`https://gym-api-1.herokuapp.com/api/coachs/${coachId}`, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -262,7 +262,7 @@ function App() {
         time: form.elements.time.value,
         sportId: form.elements.sportId.value,
       }
-      await axios.post(`http://localhost:5000/api/classes`, classesBody, {
+      await axios.post(`https://gym-api-1.herokuapp.com/api/classes`, classesBody, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -283,7 +283,7 @@ function App() {
       const classesBody = {
         time: form.elements.time.value,
       }
-      await axios.put(`http://localhost:5000/api/classes/${classesId}`, classesBody, {
+      await axios.put(`https://gym-api-1.herokuapp.com/api/classes/${classesId}`, classesBody, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -298,7 +298,7 @@ function App() {
   //------------------------------------
   const deleteClass = async classesId => {
     try {
-      await axios.delete(`http://localhost:5000/api/classes/${classesId}`, {
+      await axios.delete(`https://gym-api-1.herokuapp.com//api/classes/${classesId}`, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -321,7 +321,7 @@ function App() {
       const privtclassBody = {
         time: form.elements.time.value,
       }
-      await axios.post(`http://localhost:5000/api/privtclass/${coachId}`, privtclassBody, {
+      await axios.post(`https://gym-api-1.herokuapp.com//api/privtclass/${coachId}`, privtclassBody, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -342,7 +342,7 @@ function App() {
       const privtclassBody = {
         time: form.elements.time.value,
       }
-      await axios.put(`http://localhost:5000/api/privtclass/${privtclassId}`, privtclassBody, {
+      await axios.put(`https://gym-api-1.herokuapp.com//api/privtclass/${privtclassId}`, privtclassBody, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
@@ -357,7 +357,7 @@ function App() {
   //------------------------------------
   const deletePrivtClass = async privtclassId => {
     try {
-      await axios.delete(`http://localhost:5000/api/privtclass/${privtclassId}`, {
+      await axios.delete(`https://gym-api-1.herokuapp.com//api/privtclass/${privtclassId}`, {
         headers: {
           Authorization: localStorage.tokenDashboardSports,
         },
